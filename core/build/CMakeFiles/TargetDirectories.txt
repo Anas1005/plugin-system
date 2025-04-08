@@ -1,3 +1,0 @@
-/home/anassaif/test-shared/core/build/CMakeFiles/coreutils.dir
-/home/anassaif/test-shared/core/build/CMakeFiles/edit_cache.dir
-/home/anassaif/test-shared/core/build/CMakeFiles/rebuild_cache.dir

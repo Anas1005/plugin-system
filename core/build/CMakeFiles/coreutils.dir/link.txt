@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcoreutils.a CMakeFiles/coreutils.dir/EventManager.cpp.o CMakeFiles/coreutils.dir/Publisher.cpp.o
-/usr/bin/ranlib libcoreutils.a

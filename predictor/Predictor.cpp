@@ -1,13 +1,13 @@
 #include "Predictor.h"
 #include <iostream>
 
-Predictor::Predictor(EventManager& em) {
+Predictor::Predictor(EventManager& em) : EventListener(em) {
     std::cout << "[Predictor] Created\n";
     em.subscribe(this);
 }
 
 void Predictor::handleEvent(Event ev) {
-    std::cout << "[Predictor] Got event: " << ev.payload << "\n";
+    std::cout << "[Predictor] Got evennnnnnnt: " << ev.payload << "\n";
 }
 
 extern "C" EventListener* create_predictor(EventManager& em) {

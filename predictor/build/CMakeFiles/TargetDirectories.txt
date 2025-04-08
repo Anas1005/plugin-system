@@ -1,3 +1,0 @@
-/home/anassaif/test-shared/predictor/build/CMakeFiles/predictor.dir
-/home/anassaif/test-shared/predictor/build/CMakeFiles/edit_cache.dir
-/home/anassaif/test-shared/predictor/build/CMakeFiles/rebuild_cache.dir

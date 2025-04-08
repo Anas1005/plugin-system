@@ -1,13 +1,10 @@
 #pragma once
 #include <vector>
 #include <functional>
+#include "EventListener.h"
 #include "Event.h"
-class EventListener {
-public:
-    virtual void handleEvent(Event ev) = 0;
-    virtual ~EventListener() {}
-};
 
+class EventListener;
 class EventManager {
 public:
     void subscribe(EventListener* listener);
