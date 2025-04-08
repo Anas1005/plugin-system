@@ -7,7 +7,7 @@ Predictor::Predictor(EventManager& em) : EventListener(em) {
 }
 
 void Predictor::handleEvent(Event ev) {
-    std::cout << "[Predictor] Got evennnnnnnt: " << ev.payload << "\n";
+    std::cout << "[Predictor] Gottttttttttnt NIFTY: " << ev.payload << "\n";
 }
 
 extern "C" EventListener* create_predictor(EventManager& em) {

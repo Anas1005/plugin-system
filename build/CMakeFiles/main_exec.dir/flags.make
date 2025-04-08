@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/anassaif/test-shared/outlib
 
-CXX_FLAGS = -fPIC
+CXX_FLAGS = 
 
