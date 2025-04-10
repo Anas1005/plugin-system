@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/main_exec.dir/main.cpp.o CMakeFiles/main_exec.dir/outlib/Player.cpp.o CMakeFiles/main_exec.dir/outlib/EventManager.cpp.o CMakeFiles/main_exec.dir/outlib/EventListener.cpp.o CMakeFiles/main_exec.dir/outlib/Publisher.cpp.o -o main_exec  -ldl 
+/usr/bin/c++ -rdynamic CMakeFiles/main_exec.dir/main.cpp.o CMakeFiles/main_exec.dir/outlib/Player.cpp.o CMakeFiles/main_exec.dir/outlib/EventManager.cpp.o CMakeFiles/main_exec.dir/outlib/EventListener.cpp.o CMakeFiles/main_exec.dir/outlib/Publisher.cpp.o -o main_exec  -ldl 

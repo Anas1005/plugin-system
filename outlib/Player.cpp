@@ -1,7 +1,7 @@
 #include "Player.h"
 #include <iostream>
 
-Player::Player(EventManager& em) : eventManager_(em), predictor_(nullptr), libHandle_(nullptr) {
+Player::Player(EventManager& em) : eventManager_(em), predictor2_(nullptr), libHandle_(nullptr) {
     std::cout << "[Player] Created\n";
 
     // //libHandle_ = dlopen("/home/anassaif/test-shared/predictor/src/build/predictor_build/libpredictor.so", RTLD_NOW);
@@ -14,14 +14,14 @@ Player::Player(EventManager& em) : eventManager_(em), predictor_(nullptr), libHa
 // #endif
 //     libHandle_ = dlopen(path, RTLD_NOW);
 
-const char* customPath = std::getenv("QR_ENV_PATH");
-if (customPath) {
-    libHandle_ = dlopen(customPath, RTLD_NOW);
-    std::cout << "QR Env" << std::endl;
-} else {
-    libHandle_ = dlopen("/home/anassaif/test-shared/build/predictor_build/libpredictor.so", RTLD_NOW);
+// const char* customPath = std::getenv("QR_ENV_PATH");
+// if (customPath) {
+//     libHandle_ = dlopen(customPath, RTLD_NOW);
+//     std::cout << "QR Env" << std::endl;
+// } else {
+    libHandle_ = dlopen("/home/anassaif/test-shared/predictor/build/libpredictor.so", RTLD_NOW);
     std::cout << "Default" << std::endl;
-}
+//}
 
 
     if (!libHandle_) {
@@ -29,25 +29,27 @@ if (customPath) {
         return;
     }
 
-    using CreateFn = EventListener* (*)(EventManager&);
-    CreateFn create = (CreateFn)dlsym(libHandle_, "create_predictor");
-    if (!create) {
+    using CreateFn = Predictor* (*)(EventManager&);
+    CreateFn create_predictor = (CreateFn)dlsym(libHandle_, "create_predictor");
+    if (!create_predictor) {
         std::cerr << "dlsym failed: " << dlerror() << "\n";
         return;
     }
 
-    predictor_ = create(eventManager_);
-    if (!predictor_) {
+    predictor2_ = create_predictor(eventManager_);
+    if (!predictor2_) {
         std::cerr << "Failed to create predictor\n";
         return;
     }
 
     std::cout << "[Player] Predictor created\n";
+
+    predictor2_->print();
 }
 
 Player::~Player() {
-    if (predictor_) {
-        delete predictor_;
+    if (predictor2_) {
+        delete predictor2_;
     }
 
     if (libHandle_) {

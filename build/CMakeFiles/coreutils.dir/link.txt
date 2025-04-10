@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../predictor/libs/libcoreutils.a CMakeFiles/coreutils.dir/outlib/Player.cpp.o CMakeFiles/coreutils.dir/outlib/EventManager.cpp.o CMakeFiles/coreutils.dir/outlib/EventListener.cpp.o CMakeFiles/coreutils.dir/outlib/Publisher.cpp.o
-/usr/bin/ranlib ../predictor/libs/libcoreutils.a
